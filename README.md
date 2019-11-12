@@ -11,6 +11,9 @@ Both are valid geospatial
 
 ISO 6709:2011 
 
+
+store original submitted data in the format submitted.
+
 See [Geocentric Datum of Australia (GDA)](https://www.icsm.gov.au/australian-geospatial-reference-system)
 
 http://appsuppt103/confluence/display/1EP/UI+component+-+latitude+longitude+input
