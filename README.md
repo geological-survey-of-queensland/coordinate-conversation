@@ -2,6 +2,18 @@
 GSQ receive co-ordinates in paper forms from industry in the following formats:
 - GDA94 - Lat-Long Degrees, Minutes, Decimal Seconds (L/L)
 - MGA94 - Eastings, Nothings, Zone number (in metres) (E/N)
+
+GSQ receive co-ordinates from industry in the following formats:
+* GDA94 - Latitude, Longitude in Degrees, Minutes, Decimal Seconds
+* MGA94 - Eastings, Nothings, Zone number (in metres)
+
+Both are valid geospatial 
+
+ISO 6709:2011 
+
+See [Geocentric Datum of Australia (GDA)](https://www.icsm.gov.au/australian-geospatial-reference-system)
+
+http://appsuppt103/confluence/display/1EP/UI+component+-+latitude+longitude+input
  
 ## As is functionality
 * The user manually types in the information provided in the paper form into MERLIN in either L/L or E/N.
