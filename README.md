@@ -27,7 +27,7 @@ The coordinate input forms must cater for the three input options:
 * Eastings, northings, zone
 
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/coordinate-conversion/blob/master/images/coordinate_input_form.png" width="680"><br>
+<kbd><img src="https://github.com/geological-survey-of-queensland/coordinate-conversion/blob/master/images/coordinate_input_form.png" width="100%"></kbd><br>
 Figure 2: Example spatial coordinate input form</p>
 
 ## Coordinate Conversion
