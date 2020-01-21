@@ -1,40 +1,40 @@
 ## Introduction
 
-
-GSQ receive co-ordinates in paper forms from industry in the following formats:
-- GDA94 - Lat-Long Degrees, Minutes, Decimal Seconds (L/L)
-- MGA94 - Eastings, Nothings, Zone number (in metres) (E/N)
-
 GSQ receive co-ordinates from industry in the following formats:
-* GDA94 - Latitude, Longitude in Degrees, Minutes, Decimal Seconds
-* MGA94 - Eastings, Nothings, Zone number (in metres)
+* Latitude, longitde decimal
+* Latitude, longitde degrees, minutes, seconds
+* Eastings, northings, zone
 
-## GDA2020
+### Latitude, longitde decimal
+<p align="center">
+<kbd><img src="https://github.com/geological-survey-of-queensland/coordinate-conversion/blob/master/images/coordinate_input_form-lld.png" width="100%"></kbd><br>
+Figure 1: Latitude, longitde decimal spatial coordinate input form</p>
 
+## Latitude, longitde degrees, minutes, seconds
+<p align="center">
+<kbd><img src="https://github.com/geological-survey-of-queensland/coordinate-conversion/blob/master/images/coordinate_input_form-dms.png" width="100%"></kbd><br>
+Figure 2: Latitude, longitde degrees, minutes, seconds spatial coordinate input form</p>
 
-See [Geocentric Datum of Australia (GDA)](https://www.icsm.gov.au/australian-geospatial-reference-system)
-
+## Eastings, northings, zone
+<p align="center">
+<kbd><img src="https://github.com/geological-survey-of-queensland/coordinate-conversion/blob/master/images/coordinate_input_form-enz.png" width="100%"></kbd><br>
+Figure 2: Eastings, northings, zone spatial coordinate input form</p>
 
 ## Spatial coordinate data flow
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/coordinate-conversion/blob/master/images/spatial_coordinate-workflow.svg" width="400"><br>
 Figure 1: Spatial coordinate data flow</p>
 
-## Coordinate Input Forms
-The coordinate input forms must cater for the three input options:
-* Latitude, longitde decimal
-* Latitude, longitde degrees, minutes, seconds
-* Eastings, northings, zone
-
-<p align="center">
-<kbd><img src="https://github.com/geological-survey-of-queensland/coordinate-conversion/blob/master/images/coordinate_input_form.png" width="100%"></kbd><br>
-Figure 2: Example spatial coordinate input form</p>
 
 ## Coordinate Conversion
 http://appsuppt103/confluence/display/1EP/UI+component+-+latitude+longitude+input
 
 
+## GDA2020
+See [Geocentric Datum of Australia (GDA)](https://www.icsm.gov.au/australian-geospatial-reference-system)
+
 ## Coordinate Validation
+
 
 
 ## Coordinate Database Storage
