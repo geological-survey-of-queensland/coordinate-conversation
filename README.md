@@ -133,6 +133,16 @@ Examples:
 * 50°40′46.461″N 95°48′26.533″W 123,45m  
 * 50°03′46.461″S 125°48′26.533″E 978.90m
 
+## EPSG Codes for GDA202
+* Geographic 2D GDA2020 - [7844](https://epsg.io/7844)
+* Geographic 3D GDA2020 - [7843](https://epsg.io/7843)
+* MGA Zone 52 GDA2020 - [7852](https://epsg.io/7852)
+* MGA Zone 53 GDA2020 - [7853](https://epsg.io/7853)
+* MGA Zone 54 GDA2020 - [7854](https://epsg.io/7854)
+* MGA Zone 55 GDA2020 - [7855](https://epsg.io/7855)
+* MGA Zone 56 GDA2020 - [7856](https://epsg.io/7856)
+* MGA Zone 57 GDA2020 - [7857](https://epsg.io/7857)
+
 ## You want how many decimal places??
 Sometimes we get a little carried away with the number of decimal places to which we store coordinates in a database (6 is plenty for us).
 
