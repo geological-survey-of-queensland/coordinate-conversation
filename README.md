@@ -166,6 +166,7 @@ Sometimes we get a little carried away with the number of decimal places to whic
 
 ## See also
 * [Geocentric Datum of Australia (GDA)](https://www.icsm.gov.au/australian-geospatial-reference-system)
+* [Guidelines for Transition to GDA2020 in SIR plus tools ver. 1.1](https://github.com/geological-survey-of-queensland/spatial-coordinate-handling/blob/master/files/Guidelines%20for%20Transition%20to%20GDA2020%20in%20SIR%20plus%20tools%20ver.%201.1.pdf)
 
 ## Licence
 This code repository's content are licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/), the deed of which is stored in this repository here: [LICENSE](LICENSE).
