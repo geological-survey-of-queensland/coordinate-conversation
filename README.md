@@ -116,6 +116,7 @@ The database is to store the spatial coordinates and CRS as entered by the user 
 ### Storing coordinates in PostgreSQL database - ISO 6709 based
 ISO 6709 *Standard representation of geographic point location by coordinates* is the international standard for representation of latitude, longitude and altitude for geographic point locations. The standard states:
 * Fraction of degrees is preferred in digital data exchange.
+* Data type is Float (10,6)
 
 ## Coordinate Display - ISO 6709 based
 ISO 6709 suggests the following for representation at the human interface:
@@ -131,9 +132,16 @@ ISO 6709 suggests the following for representation at the human interface:
 1. Units of elevation or depth should be given by symbols, immediately after the digits.
 1. Elevation below reference level or depth above reference level should be indicated by a minus sign − (U+2212).
 
-Examples:  
+Sexagesimal Examples:  
 * 50°40′46.461″N 95°48′26.533″W 123,45m  
 * 50°03′46.461″S 125°48′26.533″E 978.90m
+
+### Extension of ISO 6709
+The standard has been extended to allow for depths and heights, and to include coordinate reference system identification.
+
+Decimal examples:  
+* Mount Everest +27.5916+086.5640+8850CRSWGS_84/
+* South Pole -90+000+2800CRSWGS_84/
 
 ## EPSG Codes for GDA202
 * Geographic 2D GDA2020 - [7844](https://epsg.io/7844)
