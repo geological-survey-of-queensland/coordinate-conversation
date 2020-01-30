@@ -97,10 +97,10 @@ In contrast, a coordinate conversion changes coordinates from one coordinate ref
 NOTE: ICSM has not defined a set of parameters that directly transform between AGD66 ⁄ AGD84 and GDA2020. It is recommended to first transform to GDA94 and then to GDA2020.
 
 ## Coordinate Conversion
-Text
+Todo
 
 ## Coordinate Validation
-Text
+Information internal until validation service is made public. Contact the author.
 
 ## Storing geometry in PostGIS database
 1.	Geometries are stored in the PostGIS database in its native spatial format (PostGIS is part of the PostgreSQL database).
