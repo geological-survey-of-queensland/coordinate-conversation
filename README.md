@@ -1,29 +1,88 @@
 ## Introduction
+This guide recommends the capture, storage, and display of geometric representations.
+<p align="center">
+<img src="https://github.com/geological-survey-of-queensland/spatial-coordinate-handling/blob/master/images/spatial-coordinate-handling-overview.png"><br>
+Figure 1: Lifecycle of a geometric representation</p>
 
-GSQ receive co-ordinates from industry in the following formats:
+## Background
+
+ ### ISO 6709
+* ISO 6709 _Standard representation of geographic point location by coordinates_ is the international standard for representation of latitude, longitude and altitude for geographic point locations.
+* Under ISO 6709, a geographical point is specified by the following four items:
+    * First horizontal coordinate (y), such as latitude (negative number south of equator and positive north of equator)
+    * Second horizontal coordinate (x), such as longitude (negative values west of Prime Meridian and positive values east of Prime Meridian)
+    * Vertical coordinate, i.e. height or depth (optional)
+    * Identification of coordinate reference system (CRS) (optional)
+
+### Coordinate reference system (CRS)
+* A coordinate reference system or spatial reference system (SRS) is a coordinate-based local, regional or global system used to locate geographical entities.  
+* Map projections try to portray the surface of the earth, or a portion of the earth, on a flat piece of paper or computer screen. Map projections try to transform the earth from its spherical shape (3D) to a planar shape (2D).  
+* A coordinate reference system (CRS) then defines how the two-dimensional, projected map in your GIS relates to real places on the earth. The decision of which map projection and CRS to use depends on the regional extent of the area you want to work in, on the analysis you want to do, and often on the availability of data.
+
+### GDA2020 CRS
+* The datum Australia uses now is called the Geocentric Datum of Australia 1994, or GDA94.
+* This grid of latitude and longitude coordinates moves with the drift of the continent, but satellite positioning systems base their coordinates on a framework that is fixed to the centre of the Earth.
+* By 2020, Australia will have moved 1.8 metres north-east of where it was in 1994. The discrepancies between real-time, precise satellite positioning and GDA94 will be very noticeable.
+* [GDA2020](https://www.icsm.gov.au/gda2020) defines a new datum 1.8 metres to the north-east of GDA94.
+* Stage 2 of GDA2020 will establish a dynamic datum that will continually model Australia’s movement.
+
+### SRID
+* A Spatial Reference System Identifier (SRID) is a unique value used to unambiguously identify projected, unprojected, and local spatial coordinate system definitions.
+* 
+
+### PostGIS
+*	PostGIS is a spatial database extension of PostgreSQL.
+*	Spatial databases store and manipulate spatial objects using three features: spatial types, indexes, and functions.
+* Geometries are stored in the PostGIS database in its native spatial format.
+* Spatial data is converted on ingestion into the database (done by PostGIS).
+* PostGIS spatial data can be output as WKT, WKB, GML, KML, GeoJSON, and SVG formats (done by PostGIS).
+* PostGIS stores extended metadata about the spatial including the CRS (SRS).
+
+### Coorindate transformation vs conversion
+* Changing a coordinate on one datum (the source) to the corresponding coordinate on another datum (the target) involves a process called **coordinate transformation**.
+* **Coordinate conversions** switch between coordinate reference systems on the same datum or reference frame, such as from a geographic coordinate (GDA2020 latitude and longitude) to a projected coordinate (MGA2020 Easting, Northing and Zone).
+
+### GeoJSON
+* [GeoJSON](https://tools.ietf.org/html/rfc7946) is an open standard format designed for representing simple geographical features, along with their non-spatial attributes. It is based on the JavaScript Object Notation (JSON).  
+* GeoJSON is widely used in JavaScript web-mapping libraries, JSON-based document databases, and web APIs, and became the de facto standard for web mapping when Google Maps adopted it in 2005.
+* GeoJSON uses the World Geodetic System 1984 (WGS 84) coordinate reference system, with longitude and latitude units of decimal degrees. 
+* GSQ uses GeoJSON in its CKAN data catalogue to show the spatial representation of a dataset.
+* The difference between GDA2020 and WGS84 coordinates was approximately 21 cm in January 2017, approximately 0 cm in January 2020, then 21 cm in 2023, and then continue to diverge by approximately 7cm per year. As GeoJSON is used as a representation of the geometry, not the precise geometry, this difference is not noticeable to the web user.
+
+## How does industry submit geometries to GSQ?
+GSQ receives co-ordinates from industry in the following formats:
 * Latitude, longitde decimal
 * Latitude, longitde degrees, minutes, seconds
 * Eastings, northings, zone
+* In binary format - e.g. a shapefile (ESRI .SHP format)
+* In columns in Excel spreadsheets or CSV or .txt files
 
-### Latitude, longitde decimal
+## Spatial coordinate workflow
+<p align="center">
+<kbd><img src="https://github.com/geological-survey-of-queensland/spatial-coordinate-handling/blob/master/images/spatial-coordinate-workflow.png" width="100%"></kbd><br>
+Figure 2: Spatial coordinate workflow</p>
+
+## What are the 3 different coordinate input forms?
+
+### 1. Latitude, longitde decimal
 <p align="center">
 <kbd><img src="https://github.com/geological-survey-of-queensland/coordinate-conversion/blob/master/images/coordinate_input_form-lld.png" width="100%"></kbd><br>
-Figure 1: Latitude, longitde decimal spatial coordinate input form</p>
+Figure 2: Latitude, longitde decimal spatial coordinate input form</p>
 
-## Latitude, longitde degrees, minutes, seconds
+### 2. Latitude, longitde degrees, minutes, seconds
 <p align="center">
 <kbd><img src="https://github.com/geological-survey-of-queensland/coordinate-conversion/blob/master/images/coordinate_input_form-dms.png" width="100%"></kbd><br>
-Figure 2: Latitude, longitde degrees, minutes, seconds spatial coordinate input form</p>
+Figure 3: Latitude, longitde degrees, minutes, seconds spatial coordinate input form</p>
 
-## Eastings, northings, zone
+### 3. Eastings, northings, zone
 <p align="center">
 <kbd><img src="https://github.com/geological-survey-of-queensland/coordinate-conversion/blob/master/images/coordinate_input_form-enz.png" width="100%"></kbd><br>
-Figure 2: Eastings, northings, zone spatial coordinate input form</p>
+Figure 4: Eastings, northings, zone spatial coordinate input form</p>
 
 ## Spatial coordinate data flow
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/coordinate-conversion/blob/master/images/spatial_coordinate-workflow.svg" width="400"><br>
-Figure 1: Spatial coordinate data flow</p>
+Figure 5: Spatial coordinate data flow</p>
 
 
 ## Coordinate Conversion
@@ -32,6 +91,7 @@ http://appsuppt103/confluence/display/1EP/UI+component+-+latitude+longitude+inpu
 
 ## GDA2020
 See [Geocentric Datum of Australia (GDA)](https://www.icsm.gov.au/australian-geospatial-reference-system)
+
 
 ## Coordinate Validation
 
@@ -44,7 +104,7 @@ ISO 6709 *Standard representation of geographic point location by coordinates* i
 ### Retention of originally entered coordinates
 The database is to store the spatial coordinates and CRS as entered by the user or entered programatically. This data is for reference only and is not used for spatial display.
 
-## Coordinate Display
+## Coordinate Display - ISO 6709 based
 ISO 6709 suggests the following for representation at the human interface :
 
 1. Coordinate values (latitude, longitude, and altitude) should be delimited by spaces.
@@ -103,3 +163,25 @@ Sometimes we get a little carried away with the number of decimal places to whic
 |13|10 nanometers|Thickness of a cell wall of a bacteria|
 |14|1.0 nanometer|Your fingernail grows about this far in one second|
 |15|0.1 nanometer|An atom. An atom! What are you mapping?|
+
+
+## See also
+* [Geocentric Datum of Australia (GDA)](https://www.icsm.gov.au/australian-geospatial-reference-system)
+* [EPSG:7844](https://epsg.io/7844)
+
+## Licence
+This code repository's content are licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/), the deed of which is stored in this repository here: [LICENSE](LICENSE).
+
+## Contacts
+*System owner*:  
+**Mark Gordon**  
+Geological Survey of Queensland  
+Department of Natural Resources, Mines and Energy  
+Brisbane, QLD, Australia  
+<mark.gordon@dnrme.qld.gov.au>  
+
+*Author*:  
+**David Crosswell**  
+Enterprise Architect  
+Cross-Lateral Enterprises  
+<https://crosslateral.com.au>  
