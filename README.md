@@ -28,7 +28,13 @@ Figure 1: Lifecycle of a geometric representation</p>
 
 ### SRID
 * A Spatial Reference System Identifier (SRID) is a unique value used to unambiguously identify projected, unprojected, and local spatial coordinate system definitions.
-* 
+* PostGIS uses the EPSG Geodetic Parameter Dataset.
+* SRID examples are:
+    * GDA2020 [EPSG:7844](https://epsg.io/7844)
+    * WGS84 [EPSG:4326](https://epsg.io/4326)
+    * GDA94 geographic coordinate system - EPSG:4283
+    * GDA94/MGA Zones 49-56 (EPSG:28349 - EPSG:28356)
+    * GDA2020/MGA Zones 49-56 (EPSG:7849 - EPSG:7856)
 
 ### PostGIS
 *	PostGIS is a spatial database extension of PostgreSQL.
@@ -67,42 +73,41 @@ Figure 2: Spatial coordinate workflow</p>
 ### 1. Latitude, longitde decimal
 <p align="center">
 <kbd><img src="https://github.com/geological-survey-of-queensland/coordinate-conversion/blob/master/images/coordinate_input_form-lld.png" width="100%"></kbd><br>
-Figure 2: Latitude, longitde decimal spatial coordinate input form</p>
+Figure 3: Latitude, longitde decimal spatial coordinate input form</p>
 
 ### 2. Latitude, longitde degrees, minutes, seconds
 <p align="center">
 <kbd><img src="https://github.com/geological-survey-of-queensland/coordinate-conversion/blob/master/images/coordinate_input_form-dms.png" width="100%"></kbd><br>
-Figure 3: Latitude, longitde degrees, minutes, seconds spatial coordinate input form</p>
+Figure 4: Latitude, longitde degrees, minutes, seconds spatial coordinate input form</p>
 
 ### 3. Eastings, northings, zone
 <p align="center">
 <kbd><img src="https://github.com/geological-survey-of-queensland/coordinate-conversion/blob/master/images/coordinate_input_form-enz.png" width="100%"></kbd><br>
-Figure 4: Eastings, northings, zone spatial coordinate input form</p>
+Figure 5: Eastings, northings, zone spatial coordinate input form</p>
 
-## Spatial coordinate data flow
-<p align="center">
-<img src="https://github.com/geological-survey-of-queensland/coordinate-conversion/blob/master/images/spatial_coordinate-workflow.svg" width="400"><br>
-Figure 5: Spatial coordinate data flow</p>
-
+## Coordinate Transformation
+Text
 
 ## Coordinate Conversion
-http://appsuppt103/confluence/display/1EP/UI+component+-+latitude+longitude+input
-
-
-## GDA2020
-See [Geocentric Datum of Australia (GDA)](https://www.icsm.gov.au/australian-geospatial-reference-system)
-
+Text
 
 ## Coordinate Validation
+Text
 
-
-
-## Coordinate Database Storage
-ISO 6709 *Standard representation of geographic point location by coordinates* is the international standard for representation of latitude, longitude and altitude for geographic point locations. The standard states:
-* Fraction of degrees is preferred in digital data exchange, while sexagesimal notation is tolerated for compatibility.
+## How to store geometry in PostGIS database
+1.	Geometries are stored in the PostGIS database in its native spatial format (PostGIS is part of the PostgreSQL database).
+2.	Spatial data is converted on ingestion into the database (done by PostGIS).
+3. The SRID = 7844 (GDA2020)
 
 ### Retention of originally entered coordinates
 The database is to store the spatial coordinates and CRS as entered by the user or entered programatically. This data is for reference only and is not used for spatial display.
+*	A shape file submitted to GSQ will be stored as a data object in S3.
+*	A webform that captures eastings/northings/zone stores these values in the database.
+*	A GeoJSON value entered in a form gets stored in the database.
+
+## Storing coordinates in PostgreSQL database - ISO 6709 based
+ISO 6709 *Standard representation of geographic point location by coordinates* is the international standard for representation of latitude, longitude and altitude for geographic point locations. The standard states:
+* Fraction of degrees is preferred in digital data exchange.
 
 ## Coordinate Display - ISO 6709 based
 ISO 6709 suggests the following for representation at the human interface :
@@ -121,27 +126,6 @@ ISO 6709 suggests the following for representation at the human interface :
 Examples:  
 * 50°40′46.461″N 95°48′26.533″W 123,45m  
 * 50°03′46.461″S 125°48′26.533″E 978.90m
-
-## As is functionality
-* The user manually types in the information provided in the paper form into MERLIN in either L/L or E/N.
-* The data is stored in two separate field sets in the database.
-* When one set of co-ordinates is entered, the other coordinates are nulled by the MERLIN UI.
-* There is a nightly process which identifies any nulled coordinates and attempts to populate them with a conversion on the other coordinates.  E.g.  if L/L is populated, E/N is nulled, nightly process recognises E/N is null and calculates the value from L/L.
-* The current conversion is a python script using the ArcPy library (http://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm). ArcPy is an ESRI product (http://www.esri.com/)
-
-## To be functionality
-- The user manually types in the information provided in the paper form into GEM in either L/L or E/N.
-- The data is converted into Lat-Long Decimal Degrees when saved to the database.
-- When data is retrieved from the database, it converts from Lat-Long decimal degrees into L/L & E/N on the UI.
-- There are no nightly processes to monitor and maintain anymore.
-- The current conversion tool in use is the proj.4 library provided by the Open Source Geospatial Foundation (http://www.osgeo.org/), which uses the GDA94 technical manual version 2.4 calculation (http://www.icsm.gov.au/gda/tech.html).
-- The reason this software was chosen is becuase it fits with our current technology stack, is simple and lightweight and is a mature project which uses the GDA94 technical manual defined by ICSM.
-- ArcPy is a python library which does not fit with our current technology stack.
-
-## Possible option
-- There is an enhancement to change the conversion tool to the GDAy tool (https://www.business.qld.gov.au/industry/titles-property-construction/surveying/gda-transformation-software).
-- GDAy also uses the ICSM technical manual for calculations.
-
 
 ## You want how many decimal places??
 Sometimes we get a little carried away with the number of decimal places to which we store coordinates in a database (6 is plenty for us).
@@ -164,10 +148,8 @@ Sometimes we get a little carried away with the number of decimal places to whic
 |14|1.0 nanometer|Your fingernail grows about this far in one second|
 |15|0.1 nanometer|An atom. An atom! What are you mapping?|
 
-
 ## See also
 * [Geocentric Datum of Australia (GDA)](https://www.icsm.gov.au/australian-geospatial-reference-system)
-* [EPSG:7844](https://epsg.io/7844)
 
 ## Licence
 This code repository's content are licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/), the deed of which is stored in this repository here: [LICENSE](LICENSE).
