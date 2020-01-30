@@ -99,13 +99,13 @@ Text
 2.	Spatial data is converted on ingestion into the database (done by PostGIS).
 3. The SRID = 7844 (GDA2020)
 
-### Retention of originally entered coordinates
+## Retention of originally entered coordinates
 The database is to store the spatial coordinates and CRS as entered by the user or entered programatically. This data is for reference only and is not used for spatial display.
 *	A shape file submitted to GSQ will be stored as a data object in S3.
 *	A webform that captures eastings/northings/zone stores these values in the database.
 *	A GeoJSON value entered in a form gets stored in the database.
 
-## Storing coordinates in PostgreSQL database - ISO 6709 based
+### Storing coordinates in PostgreSQL database - ISO 6709 based
 ISO 6709 *Standard representation of geographic point location by coordinates* is the international standard for representation of latitude, longitude and altitude for geographic point locations. The standard states:
 * Fraction of degrees is preferred in digital data exchange.
 
