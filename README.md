@@ -1,8 +1,8 @@
 ## Introduction
-This guide recommends the capture, storage, and display of geometric representations.
+This guide recommends the capture, storage, and display of geometric representations of GSQ data.
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/spatial-coordinate-handling/blob/master/images/spatial-coordinate-handling-overview.png"><br>
-Figure 1: Lifecycle of a geometric representation</p>
+Figure 1: Lifecycle of geometric representation</p>
 
 ## Background
 
@@ -55,7 +55,7 @@ Figure 1: Lifecycle of a geometric representation</p>
 * GSQ uses GeoJSON in its CKAN data catalogue to show the spatial representation of a dataset.
 * The difference between GDA2020 and WGS84 coordinates was approximately 21 cm in January 2017, approximately 0 cm in January 2020, then 21 cm in 2023, and then continue to diverge by approximately 7cm per year. As GeoJSON is used as a representation of the geometry, not the precise geometry, this difference is not noticeable to the web user.
 
-## How does industry submit geometries to GSQ?
+## How does industry submit spatial geometry to GSQ?
 GSQ receives co-ordinates from industry in the following formats:
 * Latitude, longitde decimal
 * Latitude, longitde degrees, minutes, seconds
@@ -86,13 +86,15 @@ Figure 4: Latitude, longitde degrees, minutes, seconds spatial coordinate input 
 Figure 5: Eastings, northings, zone spatial coordinate input form</p>
 
 ## Coordinate Transformation
-Coordinate transformation is the process of changing coordinates from one reference frame or datum to another: for example, from GDA94 to GDA2020 or from GDA2020 to ITRF 2014. In contrast, a coordinate conversion changes coordinates from one coordinate reference system to another coordinate reference system on the same datum or reference frame: for example, from GDA2020 latitude and longitude to MGA2020 Easting, Northing and Zone.
+Coordinate transformation is the process of changing coordinates from one reference frame or datum to another: for example, from GDA94 to GDA2020 or from GDA2020 to ITRF 2014. 
+
+In contrast, a coordinate conversion changes coordinates from one coordinate reference system to another coordinate reference system on the same datum or reference frame: for example, from GDA2020 latitude and longitude to MGA2020 Easting, Northing and Zone.
 
 * See [GDA Transformation products and tools](https://www.icsm.gov.au/datum/gda-transformation-products-and-tools)  
 * See [GDA94 ⇔ GDA2020 transformation and conversion tools](https://www.icsm.gov.au/datum/gda-transformation-products-and-tools/software-and-plugins)  
 * See [Geocentric Datum of Australia 2020 Technical Manual](https://www.icsm.gov.au/sites/default/files/GDA2020TechnicalManualV1.1.1.pdf)
 
-NOTE: ICSM has not defined a set of parameters that directly transform between AGD66 ⁄ AGD84 and GDA2020. It is recommended to first transform to GDA94 and then to GDA2020. ICSM recommends that the Canadian National Transformations version 2 (NTv2) grids be used for transformations wherever possible.
+NOTE: ICSM has not defined a set of parameters that directly transform between AGD66 ⁄ AGD84 and GDA2020. It is recommended to first transform to GDA94 and then to GDA2020.
 
 ## Coordinate Conversion
 Text
@@ -100,7 +102,7 @@ Text
 ## Coordinate Validation
 Text
 
-## How to store geometry in PostGIS database
+## Storing geometry in PostGIS database
 1.	Geometries are stored in the PostGIS database in its native spatial format (PostGIS is part of the PostgreSQL database).
 2.	Spatial data is converted on ingestion into the database (done by PostGIS).
 3. The SRID = 7844 (GDA2020)
@@ -116,7 +118,7 @@ ISO 6709 *Standard representation of geographic point location by coordinates* i
 * Fraction of degrees is preferred in digital data exchange.
 
 ## Coordinate Display - ISO 6709 based
-ISO 6709 suggests the following for representation at the human interface :
+ISO 6709 suggests the following for representation at the human interface:
 
 1. Coordinate values (latitude, longitude, and altitude) should be delimited by spaces.
 1. The decimal point is a part of the value, thus must usually be configured by the operating system.
