@@ -65,7 +65,7 @@ GSQ receives co-ordinates from industry in the following formats:
 
 ## Spatial coordinate workflow
 <p align="center">
-<kbd><img src="https://github.com/geological-survey-of-queensland/spatial-coordinate-handling/blob/master/images/spatial-coordinate-workflow.png" width="100%"></kbd><br>
+<img src="https://github.com/geological-survey-of-queensland/spatial-coordinate-handling/blob/master/images/spatial-coordinate-workflow.png" width="100%"><br>
 Figure 2: Spatial coordinate workflow</p>
 
 ## What are the 3 different coordinate input forms?
