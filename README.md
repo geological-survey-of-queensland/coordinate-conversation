@@ -89,7 +89,7 @@ Figure 5: Eastings, northings, zone spatial coordinate input form</p>
 Coordinate transformation is the process of changing coordinates from one reference frame or datum to another: for example, from GDA94 to GDA2020 or from GDA2020 to ITRF 2014. In contrast, a coordinate conversion changes coordinates from one coordinate reference system to another coordinate reference system on the same datum or reference frame: for example, from GDA2020 latitude and longitude to MGA2020 Easting, Northing and Zone.
 
 * See [GDA Transformation products and tools](https://www.icsm.gov.au/datum/gda-transformation-products-and-tools)  
-* See GDA94 ⇔ GDA2020 transformation and conversion tools](https://www.icsm.gov.au/datum/gda-transformation-products-and-tools/software-and-plugins)  
+* See [GDA94 ⇔ GDA2020 transformation and conversion tools](https://www.icsm.gov.au/datum/gda-transformation-products-and-tools/software-and-plugins)  
 * See [Geocentric Datum of Australia 2020 Technical Manual](https://www.icsm.gov.au/sites/default/files/GDA2020TechnicalManualV1.1.1.pdf)
 
 NOTE: ICSM has not defined a set of parameters that directly transform between AGD66 ⁄ AGD84 and GDA2020. It is recommended to first transform to GDA94 and then to GDA2020. ICSM recommends that the Canadian National Transformations version 2 (NTv2) grids be used for transformations wherever possible.
