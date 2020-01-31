@@ -42,8 +42,8 @@ since 1994, replacing AGD66/84. All data in Australia should be now be recorded 
 GDA coordinate system (either projected, or geographic coordinates).  
 * **MGA** is the Map Grid of Australia as applied to GDA94, in a projected coordinate system (as
 opposed to a geographic coordinate system). MGA uses Cartesian coordinates (easting,
-northings) rather than latitude/ longitude. Kakadu National Park falls with MGA grid zone 53,
-whilst Darwin lies in MGA zone 52.
+northings) rather than latitude/ longitude. Brisbane falls with MGA grid zone 56,
+whilst Mt Isa lies in MGA zone 54.
 
 ## Background
 
@@ -115,6 +115,14 @@ VALUES(ST_GeomFromText('POINT(-71.060316 48.432044)', 7844));`
 * GSQ uses GeoJSON in its CKAN data catalogue to show the spatial representation of a dataset.
 * The difference between GDA2020 and WGS84 coordinates was approximately 21 cm in January 2017, approximately 0 cm in January 2020, then 21 cm in 2023, and then continue to diverge by approximately 7cm per year. As GeoJSON is used as a representation of the geometry, not the precise geometry, this difference is not noticeable to the web user.
 
+## Where can I get spatial data about mining permits?
+
+* Current mining permits are at: https://gisservices.information.qld.gov.au/arcgis/rest/services/Economy/MinesPermitsCurrent/MapServer
+* Historic mining permits are at: https://gisservices.information.qld.gov.au/arcgis/rest/services/Economy/MinesPermitsHistoric/MapServer
+
+Here's an example query that shows which permits intersect the point geometry `149.7335667, -26.44194722`.
+https://gisservices.information.qld.gov.au/arcgis/rest/services/Economy/MinesPermitsCurrent/MapServer/identify?geometry=149.7335667%2C+-26.44194722&geometryType=esriGeometryPoint&sr=4283&layers=All%3A0%2C30%2C56%2C75%2C81&tolerance=1&mapExtent=149.73%2C-26.45%2C149.74%2C-26.44&imageDisplay=1000%2C1000&returnGeometry=true&f=html
+
 ## How does industry submit spatial geometry to GSQ?
 
 GSQ receives co-ordinates from industry in the following formats:
@@ -149,9 +157,9 @@ Figure 5: Eastings, northings, zone spatial coordinate input form</p>
 
 ## Coordinate Transformation
 
-Coordinate transformation is the process of changing coordinates from one reference frame or datum to another: for example, from GDA94 to GDA2020 or from GDA2020 to ITRF 2014. 
+Coordinate transformation is the process of changing coordinates from one reference frame or datum to another: for example, from GDA94 to GDA2020 or from GDA2020 to ITRF 2014.
 
-In contrast, a coordinate conversion changes coordinates from one coordinate reference system to another coordinate reference system on the same datum or reference frame: for example, from GDA2020 latitude and longitude to MGA2020 Easting, Northing and Zone.
+In contrast, a coordinate conversion changes coordinates from one coordinate reference system to another coordinate reference system on the same datum or reference frame: for example, from MGA2020 Easting, Northing and Zone to GDA2020 latitude and longitude.
 
 * See [GDA Transformation products and tools](https://www.icsm.gov.au/datum/gda-transformation-products-and-tools)  
 * See [GDA94 ⇔ GDA2020 transformation and conversion tools](https://www.icsm.gov.au/datum/gda-transformation-products-and-tools/software-and-plugins)  
@@ -165,7 +173,7 @@ Todo
 
 ## Coordinate Validation
 
-Information internal until validation service is made public. Contact the author.
+See this [dedicated page](https://github.com/geological-survey-of-queensland/spatial-coordinate-handling/blob/master/coordinate-validation.md) on coordinate validation.
 
 ## Storing geometry in PostGIS database
 
@@ -249,6 +257,7 @@ Sometimes we get a little carried away with the number of decimal places to whic
 
 * [Geocentric Datum of Australia (GDA)](https://www.icsm.gov.au/australian-geospatial-reference-system)
 * [Guidelines for Transition to GDA2020 in SIR plus tools ver. 1.1](https://github.com/geological-survey-of-queensland/spatial-coordinate-handling/blob/master/files/Guidelines%20for%20Transition%20to%20GDA2020%20in%20SIR%20plus%20tools%20ver.%201.1.pdf)
+* [Selecting the correct datum, coordinate system and projection for North Australian applications](https://www.environment.gov.au/system/files/resources/324e5fa5-e819-4cd6-b569-98aec2da62e7/files/ir473.pdf) - a very good guide to spatial coordinates in Australia.
 
 ## Licence
 
