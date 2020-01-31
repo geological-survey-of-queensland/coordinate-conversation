@@ -120,8 +120,7 @@ VALUES(ST_GeomFromText('POINT(-71.060316 48.432044)', 7844));`
 * Current mining permits are at: https://gisservices.information.qld.gov.au/arcgis/rest/services/Economy/MinesPermitsCurrent/MapServer
 * Historic mining permits are at: https://gisservices.information.qld.gov.au/arcgis/rest/services/Economy/MinesPermitsHistoric/MapServer
 
-Here's an example query that shows which permits intersect the point geometry `149.7335667, -26.44194722`.
-https://gisservices.information.qld.gov.au/arcgis/rest/services/Economy/MinesPermitsCurrent/MapServer/identify?geometry=149.7335667%2C+-26.44194722&geometryType=esriGeometryPoint&sr=4283&layers=All%3A0%2C30%2C56%2C75%2C81&tolerance=1&mapExtent=149.73%2C-26.45%2C149.74%2C-26.44&imageDisplay=1000%2C1000&returnGeometry=true&f=html
+See this [dedicated page](https://github.com/geological-survey-of-queensland/spatial-coordinate-handling/blob/master/coordinate-validation.md) on coordinate validation.
 
 ## How does industry submit spatial geometry to GSQ?
 
