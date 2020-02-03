@@ -80,3 +80,9 @@ https://gisservices.information.qld.gov.au/arcgis/rest/services/Economy/MinesPer
 **REQUEST SCOPE:** all CURRENT exploration (ID 0), production (ID 30), Infrastructure (ID 56), Information (ID 75) and Permit Admin Areas (ID81)
 
 https://gisservices.information.qld.gov.au/arcgis/rest/services/Economy/MinesPermitsCurrent/MapServer/identify?geometry=149.5602778%2C+-26.36527778&geometryType=esriGeometryPoint&sr=4283&layers=All%3A0%2C30%2C56%2C75%2C81&tolerance=1&mapExtent=149.73%2C-26.45%2C149.74%2C-26.44&imageDisplay=1000%2C1000&returnGeometry=true&f=json 
+
+# Is the coordinate within Queensland?
+
+Use the Coastline and State border geometry at:
+
+https://gisservices.information.qld.gov.au/arcgis/rest/services/Boundaries/AdminBoundariesFramework/MapServer/1
