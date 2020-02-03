@@ -130,7 +130,6 @@ GSQ receives co-ordinates from industry in the following formats:
 * Latitude, longitde degrees, minutes, seconds
 * Eastings, northings, zone
 * In binary format - e.g. a shapefile (ESRI .SHP format)
-* In columns in Excel spreadsheets or CSV or .txt files
 
 ## Spatial coordinate workflow
 <p align="center">
