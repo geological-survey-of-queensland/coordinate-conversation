@@ -24,17 +24,24 @@ To view the service in a HTML form, go to https://gisservices.information.qld.go
 
 ## Making a request
 
-You must supply the following to make the request:
+1.	Construct a query to https://gisservices.information.qld.gov.au/arcgis/rest/services/Economy/MinesPermitsCurrent/MapServer/identify?
+    1. Pass the point geometry as entered by the user in the user in the webform as longitude, latitude. in the format: 149.733566, -26.441947 - encoded this is `geometry=149.733566%2C+-26.441947`
+    2. Geometry type will be a point - `geometryType=esriGeometryPoint`
+    3. The spatial reference system ID (srid) is 4283 (GDA94). In the near future when they will change to GDA2020 which will change the srid to 7844. So, for now, pass `sr=4283`
+    4. There is a layer for each type of permit. We want to query Exploration Permits (0) and Production Permits (30) (NOTE: we will test the performance and if too slow, then we will narrow the permit layers down). So pass layers=All:0,30 - encoded this is `layers=All%3A0%2C30`
+    5. Set the tolerance to 1 - `tolerance=1`
+    6. Create a map extent (a bounding box) using the geometry used in Step 2 to limit the extents of the spatial query. This is bottom-left longitude, latitude coordinate pair and top-right longitude, latitude coordinate pair, e.g. 149.73,-26.45,149.74,-26.44. Trim the long-lat entered by the user to 2 decimal places for the first coordinate pair, add .01 to the second coordinate pair. Encoded this is `mapExtent=149.73%2C-26.45%2C149.74%2C-26.44`
+    7. Set imageDisplay=1000,1000 - encoded this is `imageDisplay=1000%2C1000`
+    8. Set returnGeometry to true - `returnGeometry=true`
+    9. Set the output format to JSON - `f=json`
+2.	Send the query.
+3.	In the JSON response:
+    1. Check if the DISPLAYNAME attribute has a value equal to the permit number. e.g. `DISPLAYNAME: "PL 404"`.
+    2. A true means that the point geometry did intersect the permit PL 404.
+    3. A false means that the point geometry did not intersect the permit PL 404.
 
-* The point geometry for the intersect
-* The layer IDs to get results from - examples below
-* The map extent - you’ll need to calculate this to be a bbox around the point geometry, you’ll need to specify at least 2 decimal places to get 1m intersect accuracy, 3 decimal places will get you 10cm. Mining permits are pretty big so I stuck with 1m in my examples
-* The tolerance in pixels - just use a value 1 for your purposes
-* The image display size in pixels - leave this at 1000,1000, this determines the accuracy of the intersect, when combined with the map extent. You could double to 2000 and increase accuracy without changing bbox, but there is a performance trade off here.
-
-When checking if a point is within a permit boundary, you must know the following to evaluate the result:
-
-* The DISPLAYNAME value of the desired permit to be checked eg “ATP 972”
+Try pasting this query below to get a JSON response that will meet a true test for PL 404:
+https://gisservices.information.qld.gov.au/arcgis/rest/services/Economy/MinesPermitsCurrent/MapServer/identify?geometry=149.5602778%2C+-26.36527778&geometryType=esriGeometryPoint&sr=4283&layers=All%3A0%2C30&tolerance=1&mapExtent=149.73%2C-26.45%2C149.74%2C-26.44&imageDisplay=1000%2C1000&returnGeometry=true&f=json
 
 ## Example requests
 
