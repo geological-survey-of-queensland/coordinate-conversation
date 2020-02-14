@@ -236,8 +236,8 @@ Sometimes we get a little carried away with the number of decimal places to whic
 |Decimal Places|Aprox. Distance|Say What?|
 |---|---|---|
 |1|10 kilometers|6.2 miles|
-|2|1 kilometer|0.62 miles|
-|3|100 meters|About 328 feet|
+|2|1 kilometer|Length of Sydney Harbour bridge|
+|3|100 meters|Usain Bolt ran this quite fast|
 |4|10 meters|About 33 feet, the the limit of accuracy for a standard GPS device|
 |5|1 meter|About 3 feet|
 |6|10 centimeters|Length of a cigarette, the limit of accuracy for a differential GPS device|
