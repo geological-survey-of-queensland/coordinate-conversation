@@ -1,3 +1,5 @@
+# What you need to know about PostGIS
+
 ## TL;DR:
 
 1. Geometries are stored in the PostGIS database in its native spatial format (PostGIS is part of the PostgreSQL database).  
@@ -23,7 +25,7 @@ Image credit: https://image.slidesharecdn.com/getting-150930203034-lva1-app6891/
 
 ## How is the geometry data arranged?
 
-geometry_hierarchy.png
+![](https://github.com/geological-survey-of-queensland/spatial-coordinate-handling/blob/master/images/geometry_hierarchy.png)
 
 ## What about 3D?
 
@@ -60,7 +62,7 @@ PostGIS gives us heaps of cool spatial functions. The majority of all spatial fu
 
 * The second table (actually, a view), geometry_columns, provides a listing of all “features” (defined as an object with geometric attributes), and the basic details of those features.
 
-images/table01.png
+![](https://github.com/geological-survey-of-queensland/spatial-coordinate-handling/blob/master/images/table_relationships.jpg)
 
 ## What about Geometry Input and Output
 
