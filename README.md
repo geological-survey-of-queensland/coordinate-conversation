@@ -40,10 +40,10 @@ coordinates (easting, northings) rather than latitude/ longitude.
 * **GDA** is the Geocentric Datum of Australia. It has been implemented as the standard datum
 since 1994, replacing AGD66/84. All data in Australia should be now be recorded using a
 GDA coordinate system (either projected, or geographic coordinates).  
-* **MGA** is the Map Grid of Australia as applied to GDA94, in a projected coordinate system (as
+* **MGA** is the Map Grid of Australia as applied to GDA94 and GDA2020, in a projected coordinate system (as
 opposed to a geographic coordinate system). MGA uses Cartesian coordinates (easting,
 northings) rather than latitude/ longitude. Brisbane falls with MGA grid zone 56,
-whilst Mt Isa lies in MGA zone 54.
+whilst Mt Isa lies in MGA zone 54. See http://www.icsm.gov.au/datum/gda-frequently-asked-questions
 
 ## Background
 
