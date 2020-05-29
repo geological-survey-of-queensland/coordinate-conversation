@@ -98,7 +98,7 @@ https://gisservices.information.qld.gov.au/arcgis/rest/services/Boundaries/Admin
 
 Use this query to check if PL6 is a valid permit:
 
-https://gisservices.information.qld.gov.au/arcgis/rest/services/Economy/MinesPermitsCurrent/MapServer/find?searchText=PL+6&contains=false&searchFields=DISPLAYNAME&sr=&layers=2%2C3%2C5%2C6%2C8%2C9%2C11%2C12%2C14%2C15%2C17%2C18%2C19%2C22%2C25%2C28%2C29%2C33%2C36%2C40%2C44%2C48%2C49%2C51%2C52%2C54%2C55%2C59%2C63%2C67%2C68%2C70%2C71%2C73%2C74%2C77%2C78%2C79& returnGeometry=true&f=json
+https://gisservices.information.qld.gov.au/arcgis/rest/services/Economy/MinesPermitsCurrent/MapServer/find?searchText=PL+6&contains=false&searchFields=DISPLAYNAME&sr=&layers=2%2C3%2C5%2C6%2C8%2C9%2C11%2C12%2C14%2C15%2C17%2C18%2C19%2C22%2C25%2C28%2C29%2C33%2C36%2C40%2C44%2C48%2C49%2C51%2C52%2C54%2C55%2C59%2C63%2C67%2C68%2C70%2C71%2C73%2C74%2C77%2C78%2C79&returnGeometry=true&f=json
 
 *Author*:  
 **David Crosswell**  
