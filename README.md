@@ -115,6 +115,33 @@ VALUES(ST_GeomFromText('POINT(-71.060316 48.432044)', 7844));`
 * GSQ uses GeoJSON in its CKAN data catalogue to show the spatial representation of a dataset.
 * The difference between GDA2020 and WGS84 coordinates was approximately 21 cm in January 2017, approximately 0 cm in January 2020, then 21 cm in 2023, and then continue to diverge by approximately 7cm per year. As GeoJSON is used as a representation of the geometry, not the precise geometry, this difference is not noticeable to the web user.
 
+#### GeoJSON bounding box example
+
+Longitude then latitude, start at bottom-left then go counter-clockwise, finishing back at bottom-left.
+
+```
+{
+    "type": "Polygon",
+    "coordinates": [
+        [
+            [148.0011, -26.9984],
+            [150.4177, -26.9984],
+            [150.4177, -24.1650],
+            [148.0011, -24.1650],
+            [148.0011, -26.9984]
+        ]
+    ]
+}
+```
+
+#### GeoJSON point example
+```
+{
+    "type": "Point",
+    "coordinates": [149.0263917, -26.7495441]
+}
+```
+
 ## Where can I get spatial data about mining permits?
 
 * Current mining permits are at: https://gisservices.information.qld.gov.au/arcgis/rest/services/Economy/MinesPermitsCurrent/MapServer
