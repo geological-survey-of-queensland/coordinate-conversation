@@ -87,7 +87,7 @@ whilst Mt Isa lies in MGA zone 54. See http://www.icsm.gov.au/datum/gda-frequent
   * Geographic 2D GDA2020 - [7844](https://epsg.io/7844)
   * Geographic 3D GDA2020 - [7843](https://epsg.io/7843)
   * WGS84 World Geodetic System 1984 - [4326](https://epsg.io/4326)
-  * GDA94 geographic coordinate system - [4823](https://epsg.io/4283)
+  * GDA94 geographic coordinate system - [4283](https://epsg.io/4283)
   * MGA Zone 52 GDA2020 - [7852](https://epsg.io/7852)
   * MGA Zone 53 GDA2020 - [7853](https://epsg.io/7853)
   * MGA Zone 54 GDA2020 - [7854](https://epsg.io/7854)
