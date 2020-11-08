@@ -50,7 +50,7 @@ Point coordinates are in x, y order (easting, northing for projected coordinates
      }
 ```
 
-A.2. LineStrings
+## A.2. LineStrings
 
 Coordinates of LineString are an array of positions (see Section 3.1.1):
    
@@ -86,6 +86,7 @@ Coordinates of a Polygon are an array of linear ring (see Section 3.1.6) coordin
 
 ### With holes:
 
+```javascript
      {
          "type": "Polygon",
          "coordinates": [
@@ -107,7 +108,7 @@ Coordinates of a Polygon are an array of linear ring (see Section 3.1.6) coordin
      }
 ```  
      
-## A.4.  MultiPoints
+## A.4. MultiPoints
 Coordinates of a MultiPoint are an array of positions:
 
 ```javascript
@@ -177,7 +178,7 @@ Coordinates of a MultiPolygon are an array of Polygon coordinate arrays:
      }
 ```
 
-## A.7. GeometryCollections
+## A.7. Geometry Collections
 
 Each element in the "geometries" array of a GeometryCollection is one of the Geometry objects described above:
 
