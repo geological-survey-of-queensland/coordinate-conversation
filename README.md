@@ -265,9 +265,9 @@ Sometimes we get a little carried away with the number of decimal places to whic
 |1|10 kilometers|6.2 miles, The width of Bribie Island|
 |2|1 kilometer|The distance from the Goodwill Bridge to the Victoria Bridge (Brisbane, QLD)|
 |3|100 meters|A football pitch e.g. the field at Suncorp Stadium|
-|4|10 meters|About 33 feet, the length of a standard Brisbane bus, the the limit of accuracy for a standard GPS device|
+|4|10 meters|About 33 feet, the length of a Brisbane bus, the the limit of accuracy for a standard GPS device|
 |5|1 meter|A cricket or baseball bat|
-|6|10 centimeters|Almost the height of a can of XXXX, the limit of accuracy for a differential GPS device|
+|6|10 centimeters|Almost the height of a beer can, the limit of accuracy for a differential GPS device|
 |7|1.0 centimeter|Width of an average fingernail|
 |8|1.0 millimeter|The width of paperclip wire|
 |9|0.1 millimeter|The width of a strand of hair|
