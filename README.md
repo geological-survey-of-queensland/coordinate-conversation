@@ -262,12 +262,12 @@ Sometimes we get a little carried away with the number of decimal places to whic
 
 |Decimal Places|Aprox. Distance|Say What?|
 |---|---|---|
-|1|10 kilometers|6.2 miles|
-|2|1 kilometer|Length of Sydney Harbour bridge|
-|3|100 meters|Usain Bolt ran this quite fast|
-|4|10 meters|About 33 feet, the the limit of accuracy for a standard GPS device|
-|5|1 meter|About 3 feet|
-|6|10 centimeters|Length of a cigarette, the limit of accuracy for a differential GPS device|
+|1|10 kilometers|6.2 miles, The width of Bribie Island|
+|2|1 kilometer|The distance from the Goodwill Bridge to the Victoria Bridge (Brisbane, QLD)|
+|3|100 meters|A football pitch e.g. the field at Suncorp Stadium|
+|4|10 meters|About 33 feet, the length of a standard Brisbane bus, the the limit of accuracy for a standard GPS device|
+|5|1 meter|A cricket or baseball bat|
+|6|10 centimeters|Almost the height of a can of XXXX, the limit of accuracy for a differential GPS device|
 |7|1.0 centimeter|Width of an average fingernail|
 |8|1.0 millimeter|The width of paperclip wire|
 |9|0.1 millimeter|The width of a strand of hair|
