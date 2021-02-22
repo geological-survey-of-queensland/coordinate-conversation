@@ -271,9 +271,9 @@ Sometimes we get a little carried away with the number of decimal places to whic
 |7|1.0 centimeter|Width of an average fingernail|
 |8|1.0 millimeter|The width of paperclip wire|
 |9|0.1 millimeter|The width of a strand of hair|
-|10|10 microns|A speck of pollen|
-|11|1.0 micron|A piece of cigarette smoke|
-|12|0.1 micron|You're doing virus-level mapping at this point|
+|10|10 microns|A spore of pollen|
+|11|1.0 micron|A typical smoke particle|
+|12|0.1 micron|You are now mapping at Coronavirus scale|
 |13|10 nanometers|Thickness of a cell wall of a bacteria|
 |14|1.0 nanometer|Your fingernail grows about this far in one second|
 |15|0.1 nanometer|An atom. An atom! What are you mapping?|
