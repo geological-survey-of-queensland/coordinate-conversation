@@ -191,8 +191,7 @@ In contrast, a coordinate conversion changes coordinates from one coordinate ref
 NOTE: ICSM has not defined a set of parameters that directly transform between AGD66 ⁄ AGD84 and GDA2020. It is recommended to first transform to GDA94 and then to GDA2020.
 
 ## Coordinate Conversion
-
-Todo
+The mathematical formaulas for converting between coordinate systems are complex. Nearly all spatial software programs will provide conversion tools. Online web services also provide tools for converting between coordinates. 
 
 ## Coordinate Validation
 
