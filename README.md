@@ -19,9 +19,7 @@ A reference system used to measure horizontal and vertical distances on a planim
 is used to locate x,y positions of point, line, and area features.
 
 **What datum is used in Australia?**  
-The Geocentric Datum of Australia (GDA) is the current datum for all of Australia. It was
-first implemented in 1994 (GDA94).  
-Because, in 2020, the continent of Australia will have moved 1.8 metres north-east of where it was in 1994, GDA2020 will replace GDA94.
+The Geocentric Datum of Australia 2020 (GDA2020).
 
 **What is WGS84**  
 WGS84 is the World Geodetic System 1984. It provides the current standard for locational
